@@ -44,6 +44,9 @@ public class FirstTest {
         WebElement logoutButton = driver.findElement(By.id("logOutAction"));
         logoutButton.click();
 
+        String windowTitle = driver.getTitle();
+        Assert.assertTrue("Wrong window title", windowTitle.equalsIgnoreCase("Login page"));
+
         driver.quit();
     }
 
