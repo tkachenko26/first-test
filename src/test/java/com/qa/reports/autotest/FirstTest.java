@@ -37,17 +37,15 @@ public class FirstTest {
         WebElement profileUser = driver.findElement(By.linkText("Profile"));
         String emailUser = profileUser.getText();
         Assert.assertEquals("yuliia.tkchnk@gmail.com", emailUser);
+
+        WebElement logoutButton = driver.findElement(By.id("logOutAction"));
+        logoutButton.click();
+        String windowTitle = driver.getTitle();
+        Assert.assertTrue("Wrong window title", windowTitle.equalsIgnoreCase("Login page"));
     }
 
     @AfterClass
     public static void tearDown() {
-        WebElement logoutButton = driver.findElement(By.id("logOutAction"));
-        logoutButton.click();
-
-        String windowTitle = driver.getTitle();
-        Assert.assertTrue("Wrong window title", windowTitle.equalsIgnoreCase("Login page"));
-
         driver.quit();
     }
-
 }
