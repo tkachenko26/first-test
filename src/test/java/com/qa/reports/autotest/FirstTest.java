@@ -31,7 +31,7 @@ public class FirstTest {
         loginField.sendKeys("yuliia.tkchnk@gmail.com");
         WebElement passwordField = driver.findElement(By.name("password"));
         passwordField.sendKeys("twTaecq4");
-        WebElement loginButton = driver.findElement(By.xpath("//button[text()='Sign In']"));
+        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"loginFormHolder\"]/form/div/div/div[2]/div[5]/div/div[1]/button"));
         loginButton.click();
 
         WebElement profileUser = driver.findElement(By.linkText("Profile"));
